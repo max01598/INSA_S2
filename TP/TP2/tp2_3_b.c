@@ -21,6 +21,7 @@ int main()
 	union semum sem;//arg de semctl
 	sem.val = 0;
 	semctl(semaphoreR,0,SETVAL,sem)//initilise la valeur initiale du sémaphore SETVAL + initialisation
+
 	/***** P ****/
 	struct sembuf buf;//structure pour operation p ou v
 	buf.sem_num = 0;

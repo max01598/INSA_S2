@@ -3,6 +3,12 @@
 #include <sys/sem.h> 
 #include <unistd.h> 
 
+union semun {
+	int val; /* valeur pour SETVAL */
+	struct semid_ds *buf; /* tampon pour IPC STAT, IPC SET */
+	unsigned short int *array; /* tableau pour GETALL, SETALL */
+	struct seminfo * buff; /* tampon pour IPC INFO */
+};
 
 int main()
 {

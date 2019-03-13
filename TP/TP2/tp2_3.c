@@ -22,11 +22,7 @@ int main()
 	union semum sem;//arg de semctl
 	sem.val = 1;
 	semctl(semaphoreR,0,SETVAL,sem)//initilise la valeur initiale du sémaphore SETVAL + initialisation
-	/*** V ***/
-	struct sembuf buf;//structure pour operation p ou v
-	buf.sem_num = 0;
-	buf.sem_op = 1;//donne v
-	buf.sem_flag = 0;
+	
 
 	semaphoreW = semget(key2,1,0666|IPC_CREAT);
 	union semum sem2;//arg de semctl
